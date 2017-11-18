@@ -1,0 +1,11 @@
+{
+  "client": {
+    "host": "127.0.0.1",
+    "port": "9023",
+    "script": "script.php"
+  },
+  "server": {
+    "executable": "/usr/local/sbin/php-fpmi",
+    "configFile": "php-fpm.ini"
+  }
+}
