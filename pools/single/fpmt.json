@@ -7,5 +7,19 @@
   "Server": {
     "Executable": "/usr/local/sbin/php-fpmi",
     "ConfigFile": "php-fpm.ini"
-  }
+  },
+  "Actions": [
+    "server-start",
+    {
+      "Type": "client-request",
+      "Expect": {
+        "Response": {
+          "Body": "Done"
+        },
+        "Output": {
+          "Regexp": "/errror/"
+        }
+      }
+    }
+  ]
 }

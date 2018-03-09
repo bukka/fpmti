@@ -1,0 +1,11 @@
+{
+  "Actions": [
+    "sever-start",
+    {
+      "Type": "server-restart"
+    }
+  ],
+  "Server": {
+    "ConfigTemplate": "php-fpm.template"
+  }
+}
