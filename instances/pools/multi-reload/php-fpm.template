@@ -1,8 +1,8 @@
 [global]
-error_log = /dev/pts/2
-{{range $i := nrange 2000}}
+error_log = /dev/stderr
+{{range $i := nrange 1900}}
 [pool_{{$i}}]
-listen = 127.0.0.1:{{add 55000 $i}}
+listen = /tmp/fpm-uds/{{$i}}12343424234324234323242332400000000000000000000000000000000000000000000000000000000000000000000000000000
 pm = dynamic
 pm.max_children = 5
 pm.start_servers = 1
