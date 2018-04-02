@@ -1,0 +1,47 @@
+{
+  "Connections": {
+    "default": {
+      "Host": "127.0.0.1",
+      "Port": "9020-9050"
+    }
+  },
+  "Clients": {
+    "c1": {
+      "Connection": "default",
+      "Script": "script1.php"
+    },
+    "c2": {
+      "Connection": "default",
+      "Script": "script2.php"
+    }
+  },
+  "Server": {
+    "Executable": "/usr/local/sbin/php-fpmi",
+    "Config": "php-fpm.tmpl"
+  },
+  "Actions": [
+    {
+      "Type": "server-start"
+    },
+    {
+      "Type": "parallel",
+      "Actions": [
+        {
+          "Type": "client-request",
+          "Client": "c1",
+          "Repeat": 2,
+          "Expect": {
+            "Response": "Done 1"
+          }
+        },
+        {
+          "Type": "client-request",
+          "Client": "c2",
+          "Expect": {
+            "Response": "Done 2"
+          }
+        }
+      ]
+    }
+  ]
+}

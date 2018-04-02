@@ -6,6 +6,6 @@
     }
   ],
   "Server": {
-    "ConfigTemplate": "php-fpm.template"
+    "ConfigTemplate": "php-fpm.tmpl"
   }
 }

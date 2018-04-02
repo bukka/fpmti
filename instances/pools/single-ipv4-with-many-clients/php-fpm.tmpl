@@ -1,7 +1,7 @@
 [global]
 error_log = /dev/pts/2
 [unconfined]
-listen = 127.0.0.1:9023
+listen = {{ conn default }}
 pm = dynamic
 pm.max_children = 5
 pm.start_servers = 1

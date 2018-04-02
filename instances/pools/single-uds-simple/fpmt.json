@@ -1,23 +1,26 @@
 {
+  "Connection": {
+    "Path": "/tmp/fpm-{{rand 1024}}.sock"
+  },
   "Client": {
-    "Host": "127.0.0.1",
-    "Port": "9023",
+    "Connection": "default",
     "Script": "script.php"
   },
   "Server": {
     "Executable": "/usr/local/sbin/php-fpmi",
-    "ConfigFile": "php-fpm.ini"
+    "ConfigFile": "php-fpm.tmpl"
   },
   "Actions": [
     "server-start",
     {
       "Type": "client-request",
+      "Client": "default",
       "Expect": {
         "Response": {
           "Body": "Done"
         },
         "Output": {
-          "Regexp": "/errror/"
+          "Regexp": "/error/"
         }
       }
     }
