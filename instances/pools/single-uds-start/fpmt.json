@@ -1,0 +1,29 @@
+{
+  "Connection": {
+    "Path": "/tmp/fpm-{{rand 1024}}.sock"
+  },
+  "Server": {
+    "ConfigFile": "php-fpm.tmpl"
+  },
+  "Actions": [
+    {
+      "Type": "server-start",
+      "Expect": {
+        "Output": [
+          "{{date}} NOTICE: {{app}} is running, pid {{pid}}",
+          "{{date}} NOTICE: ready to handle connections"
+        ]
+      }
+    },
+    {
+      "Type": "server-signal",
+      "Signal": "SIGTERM",
+      "Expect": {
+        "Output": [
+          "{{date}} NOTICE: Terminating ...",
+          "{{date}} NOTICE: exiting, bye-bye!"
+        ]
+      }
+    }
+  ]
+}
