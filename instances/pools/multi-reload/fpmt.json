@@ -2,7 +2,18 @@
   "Actions": [
     "sever-start",
     {
-      "Type": "server-restart"
+      "Type": "server-signal",
+      "Description": "Server restart",
+      "Signal": "SIGUSR2",
+      "Expect": {
+        "Output": [
+          "NOTICE: Reloading in progress ...",
+          "NOTICE: reloading: execvp(\"{{app_bin}}\", {\"{{app_bin}}\", \"-F\", \"-y\", \"{{conf_name}}\"})",
+          "NOTICE: using inherited socket fd={{fd}}, \"{{conn_addr}}\"",
+          "NOTICE: {{app}} is running, pid {{pid}}",
+          "NOTICE: ready to handle connections"
+        ]
+      }
     }
   ],
   "Server": {
