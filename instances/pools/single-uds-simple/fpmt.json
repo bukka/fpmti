@@ -19,9 +19,9 @@
         "Response": {
           "Body": "Done"
         },
-        "Output": {
-          "Regexp": "/error/"
-        }
+        "Output": [
+          "NOTICE: [pool unconfined] child {{pid}} said into stderr: \"error\""
+        ]
       }
     }
   ]
