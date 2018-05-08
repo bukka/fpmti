@@ -1,23 +1,25 @@
 {
-  "Connections": {
-    "default": {
-      "Host": "127.0.0.1",
-      "Port": "9020-9050"
-    }
-  },
-  "Clients": {
-    "c1": {
-      "Connection": "default",
-      "Script": "script1.php"
+  "Settings": {
+    "Connections": {
+      "default": {
+        "Host": "127.0.0.1",
+        "Port": "9020-9050"
+      }
     },
-    "c2": {
-      "Connection": "default",
-      "Script": "script2.php"
+    "Clients": {
+      "c1": {
+        "Connection": "default",
+        "Script": "script1.php"
+      },
+      "c2": {
+        "Connection": "default",
+        "Script": "script2.php"
+      }
+    },
+    "Server": {
+      "Executable": "/usr/local/sbin/php-fpmi",
+      "Config": "php-fpm.tmpl"
     }
-  },
-  "Server": {
-    "Executable": "/usr/local/sbin/php-fpmi",
-    "Config": "php-fpm.tmpl"
   },
   "Actions": [
     {

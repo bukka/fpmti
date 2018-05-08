@@ -1,9 +1,11 @@
 {
-  "Connection": {
-    "Path": "/tmp/fpm-{{rand 1024}}.sock"
-  },
-  "Server": {
-    "ConfigFile": "php-fpm.tmpl"
+  "Settings": {
+    "Connection": {
+      "Path": "/tmp/fpm-{{rand 1024}}.sock"
+    },
+    "Server": {
+      "ConfigFile": "php-fpm.tmpl"
+    }
   },
   "Actions": [
     {

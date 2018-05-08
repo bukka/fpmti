@@ -1,4 +1,9 @@
 {
+  "Settings": {
+    "Server": {
+      "ConfigFile": "php-fpm.tmpl"
+    }
+  },
   "Actions": [
     "sever-start",
     {
@@ -15,8 +20,5 @@
         ]
       }
     }
-  ],
-  "Server": {
-    "ConfigFile": "php-fpm.tmpl"
-  }
+  ]
 }
