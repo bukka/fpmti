@@ -3,7 +3,7 @@
     "Connection": {
       "Path": "/tmp/fpm-{{rand 1024}}.sock"
     },
-    "Client": {
+    "Request": {
       "Connection": "default",
       "Script": "script.php"
     },
@@ -16,7 +16,7 @@
     "server-start",
     {
       "Type": "client-request",
-      "Client": "default",
+      "Request": "default",
       "Expect": {
         "Response": {
           "Body": "Done"

@@ -6,12 +6,12 @@
         "Port": "9020-9050"
       }
     },
-    "Clients": {
-      "c1": {
+    "Requests": {
+      "r1": {
         "Connection": "default",
         "Script": "script1.php"
       },
-      "c2": {
+      "r2": {
         "Connection": "default",
         "Script": "script2.php"
       }
@@ -30,7 +30,7 @@
       "Actions": [
         {
           "Type": "client-request",
-          "Client": "c1",
+          "Request": "r1",
           "Repeat": 2,
           "Expect": {
             "Response": "Done 1"
@@ -38,7 +38,7 @@
         },
         {
           "Type": "client-request",
-          "Client": "c2",
+          "Request": "r2",
           "Expect": {
             "Response": "Done 2"
           }
